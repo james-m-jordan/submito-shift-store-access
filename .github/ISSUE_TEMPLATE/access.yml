@@ -1,0 +1,42 @@
+name: Request access
+description: Ask for read access to the private repository.
+title: "Access request: <your-github-username>"
+labels: ["access-request"]
+body:
+  - type: input
+    id: github
+    attributes:
+      label: GitHub username (no @)
+      placeholder: "octocat"
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Contact email
+      placeholder: "you@example.edu"
+    validations:
+      required: true
+  - type: dropdown
+    id: affiliation
+    attributes:
+      label: Affiliation
+      options: [Academia, Industry, Independent, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Intended use
+      description: What do you plan to do with the code?
+    validations:
+      required: true
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: Agreements
+      options:
+        - label: I agree not to redistribute the code without permission.
+          required: true
+        - label: I accept the license/terms in this repo.
+          required: true

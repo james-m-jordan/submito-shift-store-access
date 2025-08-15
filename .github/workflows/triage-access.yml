@@ -1,0 +1,30 @@
+name: Access request triage
+on:
+  issues:
+    types: [opened]
+jobs:
+  triage:
+    if: contains(github.event.issue.labels.*.name, 'access-request') || startsWith(github.event.issue.title, 'Access request')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Assign maintainers and comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = context.issue.number;
+            await github.rest.issues.addAssignees({ owner, repo, issue_number, assignees: ["james-m-jordan"] });
+            await github.rest.issues.createComment({
+              owner, repo, issue_number,
+              body: [
+                "Thanks for your request! A maintainer will review shortly.",
+                "",
+                "**Maintainers:** After approval, invite with:",
+                "```bash",
+                "gh repo add-collaborator james-m-jordan/submito-shift-store <github-username> --permission pull",
+                "```"
+              ].join("\n")
+            });
