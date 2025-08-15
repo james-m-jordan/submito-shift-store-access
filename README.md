@@ -2,7 +2,7 @@
 # Submitochondrial Protein Translocation in Thermogenic Regulation
 #### Fahrettin Haczeyni, James M. Jordan, … , Haiyuan Yu, Lewis C. Cantley, and Baran A. Ersoy
 
-![Graphical Abstract](graphical-abstract.png)
+![graphical-abstract.png]
 
 ## In brief
 Haczeyni and Jordan et al. report that mitochondrial stress regulates energy utilization by forcing translocation of IM-bound proteins into the matrix.
@@ -16,10 +16,3 @@ Haczeyni and Jordan et al. report that mitochondrial stress regulates energy uti
 ## Request access
 Request read access by opening an issue:
 - [Request access](https://github.com/james-m-jordan/submito-shift-store-access/issues/new?template=access.yml)
-
-We approve on a case-by-case basis. You agree not to redistribute the code and to follow the license/terms in this repo.
-
-## What you'll get
-- Read access to `james-m-jordan/submito-shift-store`
-- TOC of repo
-- Instructions to get started
